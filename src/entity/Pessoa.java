@@ -1,6 +1,8 @@
 package entity;
 
-public class Pessoa {
+import java.util.Comparator;
+
+public class Pessoa implements Comparable<Pessoa>, Comparator<Pessoa>{
 
     private String nome;
     private int idade;
@@ -27,6 +29,17 @@ public class Pessoa {
         return altura;
     }
 
+    @Override
+    public int compareTo(Pessoa pessoa) {
+        return Integer.compare(this.getIdade(), pessoa.getIdade());
+    }
+
+
+    @Override
+    public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+        return Double.compare(pessoa1.getAltura(), pessoa2.getAltura());
+    }
+
     public String toString(){
         return "Nome: "
                 + getNome()
@@ -37,4 +50,5 @@ public class Pessoa {
                 + "Altura: "
                 + getAltura();
     }
+
 }

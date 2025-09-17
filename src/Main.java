@@ -1,19 +1,30 @@
+import entity.OrdenacaoPessoas;
 import entity.Pessoa;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
 
-        Pessoa pessoa = new Pessoa("Pedro", 50, 1.80);
+        Locale.setDefault(Locale.US);
 
-        System.out.println(pessoa.getNome());
-        System.out.println(pessoa.getAltura());
-        System.out.println(pessoa.getIdade());
+        OrdenacaoPessoas ordenacaoPessoas = new OrdenacaoPessoas();
 
-        System.out.println("------------------");
+        ordenacaoPessoas.adicionarPessoa("Alisson", 47, 1.85);
+        ordenacaoPessoas.adicionarPessoa("João Marcos", 25, 1.75);
+        ordenacaoPessoas.adicionarPessoa("Marcos Vinicius", 46, 1.77);
+        ordenacaoPessoas.adicionarPessoa("Vanessa da Cunha", 22, 1.65);
+        ordenacaoPessoas.adicionarPessoa("Maria Luiza", 18, 1.68);
 
-        System.out.println(pessoa);
+        System.out.println("--------------------------------------");
+
+        System.out.println("Ordenar por Idade:");
+        ordenacaoPessoas.ordenarPorIdade();
+
+        System.out.println("--------------------------------------");
+
+        System.out.println("Ordernar por Altura:");
+        ordenacaoPessoas.ordernarPorAltura();
 
     }
 }
